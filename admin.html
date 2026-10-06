@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DisasterGuard - Admin Module</title>
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<header><nav class="navbar"><div class="logo">🚨 Disaster<span>Guard</span></div><div><span>👨‍💼 Administrator</span><button class="logout" onclick="logout()">Logout</button></div></nav></header>
+
+<main class="container">
+<div class="page-title"><div><p class="small-title">ADMIN MODULE</p><h1>Admin Dashboard</h1><p>Manage disaster reports, users, alerts and resources.</p></div></div>
+
+<section class="stats">
+<div><span>Total Reports</span><b id="totalReports">0</b></div>
+<div><span>Registered Users</span><b id="totalUsers">0</b></div>
+<div><span>Pending</span><b id="pendingReports">0</b></div>
+<div><span>Resolved</span><b id="resolvedReports">0</b></div>
+</section>
+
+<section class="panel"><h2>🚨 Disaster Reports</h2><div id="adminReports"></div></section>
+
+<div class="two-column">
+<section class="panel">
+<h2>📢 Manage Alerts</h2>
+<form onsubmit="addAlert(event)" class="form-stack">
+<input id="alertTitle" required placeholder="Alert title">
+<textarea id="alertMessage" required placeholder="Alert message"></textarea>
+<button class="primary" type="submit">Add Alert</button>
+</form>
+<div id="adminAlerts"></div>
+</section>
+
+<section class="panel">
+<h2>📦 Manage Resources</h2>
+<form onsubmit="updateResource(event)" class="form-stack">
+<select id="resourceName"><option>Medical Teams</option><option>Rescue Vehicles</option><option>Water Supplies</option><option>Safe Shelters</option></select>
+<input id="resourceValue" type="number" min="0" required placeholder="New value">
+<button class="primary" type="submit">Update Resource</button>
+</form>
+<div id="adminResources"></div>
+</section>
+</div>
+
+<section class="panel"><h2>👥 Registered Users</h2><div id="users"></div></section>
+</main>
+<div id="toast"></div>
+<script src="js/admin.js"></script>
+</body>
+</html>

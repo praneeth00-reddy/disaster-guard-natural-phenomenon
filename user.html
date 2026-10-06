@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DisasterGuard - User Module</title>
+<link rel="stylesheet" href="css/user.css">
+</head>
+<body>
+<header><nav class="navbar"><div class="logo">🚨 Disaster<span>Guard</span></div><div><span id="userName"></span><button class="logout" onclick="logout()">Logout</button></div></nav></header>
+
+<main class="container">
+<div class="page-title"><div><p class="small-title">USER MODULE</p><h1>User Dashboard</h1><p>Report emergencies and monitor your disaster reports.</p></div><button class="primary" onclick="openReport()">🚨 Report Disaster</button></div>
+
+<section class="stats">
+<div><span>Total Reports</span><b id="totalReports">0</b></div>
+<div><span>Pending</span><b id="pendingReports">0</b></div>
+<div><span>Resolved</span><b id="resolvedReports">0</b></div>
+</section>
+
+<section class="panel">
+<h2>🚨 Report a Disaster</h2>
+<form id="reportForm" onsubmit="submitReport(event)">
+<div class="form-grid">
+<div><label>Disaster Type</label><select id="type" required><option value="">Select</option><option>Flood</option><option>Fire</option><option>Cyclone</option><option>Earthquake</option><option>Landslide</option><option>Accident</option><option>Other</option></select></div>
+<div><label>Location</label><input id="location" required placeholder="Enter location"></div>
+</div>
+<label>Description</label><textarea id="description" required placeholder="Describe the emergency"></textarea>
+<button class="primary" type="submit">Submit Report</button>
+</form>
+</section>
+
+<section class="panel">
+<h2>📋 My Reports</h2><div id="reports"></div>
+</section>
+
+<section class="panel">
+<h2>📢 Emergency Alerts</h2><div id="alerts"></div>
+</section>
+
+<section class="panel">
+<h2>📦 Available Resources</h2><div id="resources" class="resource-grid"></div>
+</section>
+</main>
+<div id="toast"></div>
+<script src="js/user.js"></script>
+</body>
+</html>

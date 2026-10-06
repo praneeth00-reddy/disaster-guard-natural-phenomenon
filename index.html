@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DisasterGuard - Login</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header><nav class="navbar"><div class="logo">🚨 Disaster<span>Guard</span></div><a href="#about">About</a></nav></header>
+
+<main class="auth-page">
+<section class="welcome">
+<p class="small-title">EMERGENCY RESPONSE PLATFORM</p>
+<h1>Stay Alert.<br><span>Stay Safe.</span></h1>
+<p>DisasterGuard is a digital disaster management system for reporting emergencies, coordinating response operations and managing emergency resources.</p>
+<div class="feature-grid">
+<div>🚨 Emergency Reporting</div><div>📢 Live Alerts</div>
+<div>🏠 Shelter Information</div><div>📦 Resource Management</div>
+</div>
+</section>
+
+<section class="auth-card">
+<div id="loginBox">
+<h2>🔐 Login</h2>
+<p class="muted">Access your DisasterGuard module</p>
+<form onsubmit="loginUser(event)">
+<label>Email</label><input id="loginEmail" type="email" required placeholder="Enter email">
+<label>Password</label><input id="loginPassword" type="password" required placeholder="Enter password">
+<button class="primary-btn" type="submit">Login</button>
+</form>
+<p class="switch">New user? <button onclick="showSignup()">Create Account</button></p>
+<div class="demo"><b>Admin Demo</b><br>admin@disasterguard.com<br>admin123</div>
+</div>
+
+<div id="signupBox" class="hidden">
+<h2>📝 Signup</h2>
+<p class="muted">Create a user account</p>
+<form onsubmit="signupUser(event)">
+<label>Full Name</label><input id="signupName" required placeholder="Enter your name">
+<label>Email</label><input id="signupEmail" type="email" required placeholder="Enter email">
+<label>Password</label><input id="signupPassword" type="password" minlength="6" required placeholder="Minimum 6 characters">
+<button class="primary-btn" type="submit">Create Account</button>
+</form>
+<p class="switch">Already registered? <button onclick="showLogin()">Login</button></p>
+</div>
+</section>
+</main>
+
+<footer><div class="logo">🚨 Disaster<span>Guard</span></div><p>Smart technology for safer communities.</p></footer>
+<script src="js/auth.js"></script>
+</body>
+</html>
